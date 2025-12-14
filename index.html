@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiến tranh và Hòa bình - Lev Tolstoy | Ấn bản Cổ điển Tối Ưu</title>
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* --- CSS Variables: Bảng màu "Đế chế Nga thế kỷ 19" --- */
+:root {
+  --primary-dark: #3b3a36; /* Màu than chì ấm/Sepia đậm */
+  --primary-military: #5a6e4f; /* Xanh rêu quân đội trầm (War) */
+  --accent-gold: #c0a062; /* Vàng đồng cổ kính (Antique Brass) */
+  --accent-red: #8c2f2b; /* Đỏ Burgundy trầm (cho điểm nhấn cảm xúc) */
+ 
+  --text-dark: #2b2b2b;
+  --text-light: #f4ecd8; /* Màu giấy cũ sáng */
+ 
+  --bg-cream: #fdfbf7; /* Nền kem giấy */
+  --bg-parchment: #f0e6d2; /* Nền giấy da sẫm hơn */
+  --bg-darker-parchment: #e6d8c0; /* Giấy da tông ấm hơn cho Review Section */
+ 
+  /* Cải tiến: Thêm biến cho hiệu ứng border shadow */
+  --shadow-parchment: 0 5px 15px rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Sử dụng font Lora cho cảm giác văn học */
+  font-family: 'Lora', serif;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  line-height: 1.7; /* Cải tiến: Giảm nhẹ line-height */
+  letter-spacing: 0.2px; /* Cải tiến: Thêm giãn chữ nhẹ */
+  overflow-x: hidden;
+ 
+  /* Cải tiến LỚN: Thêm họa tiết giấy cũ (Paper Grain & Diagonal Weave) */
+  background-image:
+    /* Paper Grain (họa tiết chấm bi nhẹ) */
+    url("data:image/svg+xml,%3Csvg width='42' height='42' viewBox='0 0 42 42' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.08' fill='%23c0a062' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cg id='page-1' fill-rule='nonzero'%3E%3Cpath d='M39 12V3h-9v9h9zm-12 0V3h-9v9h9zm-12 0V3h-9v9h9zM39 24v-9h-9v9h9zm-12 0v-9h-9v9h9zm-12 0v-9h-9v9h9zM39 36v-9h-9v9h9zm-12 0v-9h-9v9h9zm-12 0v-9h-9v9h9zM24 39v-3h-3v3h3z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    /* Diagonal Weave (họa tiết chéo nhẹ) */
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c0a062' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+ 
+  background-blend-mode: multiply; /* Hòa trộn hai họa tiết để tạo độ sâu */
+  background-size: 42px 42px, 60px 60px; /* Điều chỉnh kích thước từng họa tiết */
+}
+
+/* Playfair Display cho các tiêu đề lớn, tăng độ sang trọng */
+h1, h2, h3, .logo {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 { color: var(--accent-gold); }
+h2 { color: var(--primary-dark); }
+
+a { color: inherit; transition: 0.3s; }
+/* Cải tiến: Thiết lập text-decoration-style cổ điển hơn */
+a { text-decoration: underline 1px; text-decoration-color: rgba(0,0,0,0.15); }
+a:hover { text-decoration: none; color: var(--accent-red); }
+ 
+section { padding: 5rem 5%; position: relative; }
+
+/* --- Họa tiết phân cách (Ornamental Divider) --- */
+.divider-ornament {
+  text-align: center;
+  margin: 3rem 0; /* Cải tiến: Tăng khoảng cách */
+  color: var(--accent-gold);
+  font-size: 1.5rem;
+  opacity: 0.9; /* Cải tiến: Tăng độ rõ nét */
+  letter-spacing: 10px; /* Cải tiến: Giãn cách họa tiết ra nhiều hơn */
+}
+.divider-ornament::before, .divider-ornament::after {
+  /* Cải tiến: Sử dụng ký tự sao chìm để mô phỏng biểu tượng Hoàng gia Nga */
+  content: '★ ⚜ ★';
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  margin: 0 10px;
+}
+
+
+/* --- Header --- */
+header {
+  background-color: rgba(253, 251, 247, 0.98); /* Nền kem mờ */
+  padding: 1rem 5%;
+  /* Cải tiến: Dùng shadow mạnh mẽ hơn cho viền dưới */
+  border-bottom: 1px solid var(--accent-gold);
+  box-shadow: 0 3px 15px rgba(0,0,0,0.15); /* Shadow mạnh hơn */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.9rem; /* Cải tiến: Tăng nhẹ font size */
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: 2px; /* Cải tiến: Tăng letter-spacing */
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.1); /* Shadow tinh tế */
+}
+.logo span { color: var(--accent-red); font-style: italic;}
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 30px; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px;}
+
+/* Cải tiến: Hiệu ứng gạch chân tinh tế */
+nav a { position: relative; text-decoration: none; color: var(--text-dark); }
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 50%; /* Bắt đầu từ giữa */
+  bottom: -8px; /* Đẩy xuống xa hơn */
+  width: 0;
+  height: 2px; /* Dày hơn */
+  background: var(--accent-red); /* Màu nhấn */
+  transform: translateX(-50%);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animation mượt hơn */
+}
+nav a:hover { color: var(--accent-red); }
+nav a:hover::after { width: 100%; } /* Kéo dài từ giữa ra */
+
+
+/* --- Hero Section (KHÔNG SỬA) --- */
+.hero {
+  display: flex;
+  align-items: center;
+  /* Cải tiến: Gradient đậm và rõ ràng hơn */
+  background: linear-gradient(to right bottom, var(--primary-dark) 30%, var(--primary-military) 100%); /* Cải tiến: Tăng độ đậm của Primary Dark */
+  color: var(--text-light);
+  min-height: 85vh;
+  padding-top: 4rem;
+  /* Cải tiến: Biên dưới dày và rõ nét, sử dụng box-shadow như một viền chạm khắc */
+  border-bottom: 8px solid var(--accent-gold);
+  box-shadow: inset 0 -15px 20px rgba(0,0,0,0.3); /* Cải tiến: Shadow chìm để mô phỏng viền chạm khắc */
+}
+
+.hero-text { flex: 1; padding-right: 4rem; }
+
+.hero-text h1 {
+  font-size: 4.8rem; /* Cải tiến: Tăng nhẹ kích thước */
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  /* Cải tiến LỚN: Shadow và hiệu ứng 3D mạnh mẽ hơn */
+  text-shadow:
+    -1px -1px 0 #000, /* Viền mỏng trên/trái */
+    1px 1px 0 #000, /* Viền mỏng dưới/phải */
+    3px 3px 0 var(--primary-dark), /* Độ dày chính */
+    6px 6px 15px rgba(0,0,0,0.9); /* Shadow đậm hơn cho hiệu ứng nổi */
+  letter-spacing: 4px; /* Tăng khoảng cách chữ */
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-weight: 400;
+  font-style: italic;
+  opacity: 1; /* Cải tiến: Bỏ opacity */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* Thêm shadow cho chữ dễ đọc */
+}
+
+.hero-text p { font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.95; max-width: 600px; }
+
+.btn-antique {
+  display: inline-block;
+  padding: 18px 45px; /* Cải tiến: Padding lớn hơn */
+  /* Cải tiến: Gradient vàng sáng hơn */
+  background: linear-gradient(to bottom, #d4af37, var(--accent-gold), #a08550);
+  color: var(--primary-dark);
+  border: 3px solid #7a5e2f; /* Cải tiến: Viền dày hơn */
+  font-family: 'Playfair Display', serif;
+  font-weight: 800; /* Cải tiến: Font Weight đậm hơn */
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Cải tiến: Tăng letter-spacing */
+  /* Cải tiến: Hiệu ứng chạm khắc (Emboss/Bevel) */
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7), /* Highlight trên */
+    inset 0 -1px 0 rgba(0,0,0,0.2), /* Shadow dưới */
+    0 8px 15px rgba(0,0,0,0.5); /* Shadow mạnh mẽ */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btn-antique:hover {
+  transform: translateY(-4px); /* Cải tiến: Nâng lên nhiều hơn */
+  /* Cải tiến: Thêm box-shadow bên trong (inset) */
+  box-shadow:
+    inset 0 0 15px rgba(0,0,0,0.5), /* Shadow chìm đậm */
+    0 12px 25px rgba(0,0,0,0.7); /* Shadow ngoài cực mạnh */
+  background: linear-gradient(to bottom, #ffe47a, #d4af37); /* Màu vàng sáng hơn khi hover */
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* Cải tiến: Lớp phủ mờ cho ảnh bìa */
+.hero-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Cải tiến: Lớp phủ radial gradient đậm hơn */
+  background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Ảnh bìa với khung tranh cổ điển */
+.hero-image img {
+  max-width: 90%; /* Cải tiến: Tăng kích thước ảnh */
+  height: auto;
+  /* Cải tiến LỚN: Tăng độ dày viền (khung tranh) */
+  border: 15px solid transparent; /* Viền dày hơn */
+  border-image: linear-gradient(to bottom right, var(--accent-gold), #7a5e2f) 1;
+  /* Cải tiến: Shadow đậm và hiệu ứng 3D cho ảnh */
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.7),
+    inset 0 0 30px rgba(0,0,0,0.5); /* Shadow chìm bên trong viền */
+  /* Cải tiến: Thêm filter Sepia & Contrast nhẹ */
+  filter: sepia(40%) contrast(1.1);
+}
+
+/* --- Synopsis Section (Cải tiến nền) --- */
+.synopsis-section {
+  padding-top: 3rem; /* Cải tiến: Tăng padding */
+  padding-bottom: 3rem;
+  /* Giữ nguyên họa tiết ô vuông tinh tế cho nền giấy da */
+  background-color: var(--bg-parchment);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c0a062' fill-opacity='0.05'%3E%3Cpath d='M0 0h20v20H0zm20 20h20v20H20zm40 40h20v20H60zm20 20h20v20H80zM0 60h20v20H0zM20 80h20v20H20zm40 0h20v20H60zM80 60h20v20H80zM20 0h20v20H20zm40 20h20v20H60zM40 40h20v20H40zM60 60h20v20H60zM40 80h20v20H40zM40 0h20v20H40zM80 20h20v20H80zM60 40h20v20H60zM80 80h20v20H80z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  border-top: 2px solid var(--accent-gold); /* Cải tiến: Viền vàng rõ nét */
+}
+.synopsis-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  /* Cải tiến LỚN: Tạo hiệu ứng trang in */
+  background-color: var(--bg-cream);
+  padding: 3rem; /* Cải tiến: Tăng padding */
+  /* Cải tiến: Viền shadow chìm cho nội dung chính */
+  box-shadow: var(--shadow-parchment);
+  border: 2px solid rgba(0,0,0,0.1); /* Viền rõ ràng hơn */
+}
+.synopsis-content .main-text {
+  flex: 2;
+  font-size: 1.15rem; /* Cải tiến: Tăng nhẹ font size */
+  line-height: 1.8; /* Cải tiến: Tăng line-height cho dễ đọc */
+  text-align: justify;
+}
+/* Cải tiến: Tăng độ tương phản cho chữ */
+.synopsis-content .main-text p {
+  color: #222; /* Màu chữ đậm hơn */
+}
+
+/* --- Vài Nét Chính (Meta-Info Card) --- */
+.synopsis-content .meta-info {
+  flex: 1;
+  padding: 2rem; /* Cải tiến: Tăng padding */
+  background-color: var(--bg-cream);
+  /* Cải tiến LỚN: Viền kép cho hộp info */
+  border: 2px solid var(--accent-gold); /* Viền vàng dày hơn */
+  border-top: 6px solid var(--accent-red); /* Viền đỏ dày hơn */
+  /* Cải tiến: Thêm shadow chìm cho hộp info */
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.15), 0 8px 20px rgba(0,0,0,0.2); /* Shadow rõ hơn */
+  font-style: italic;
+  font-size: 1rem; /* Cải tiến: Tăng nhẹ font size */
+  /* Cải tiến: Thiết lập vị trí cho watermark */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cải tiến LỚN: Watermark tinh tế */
+.synopsis-content .meta-info::before {
+  content: '1869'; /* Năm xuất bản */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg); /* Cải tiến: Xoay nhiều hơn */
+  font-size: 6rem; /* Cải tiến: Font size lớn hơn */
+  font-family: 'Playfair Display', serif;
+  color: var(--accent-gold);
+  opacity: 0.18; /* Cải tiến: Tăng nhẹ opacity để watermark rõ hơn */
+  z-index: 0;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.synopsis-content .meta-info h3 {
+  margin-top: 0;
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-family: 'Lora', serif;
+  font-size: 1.3rem; /* Cải tiến: Tăng font size */
+  margin-bottom: 1rem;
+  position: relative;
+}
+.synopsis-content .meta-info p {
+  position: relative;
+}
+
+
+/* --- General Section Styling (KHÔNG SỬA) --- */
+#tom-tat {
+  background-color: var(--bg-cream); /* Đảm bảo nền sáng rõ ràng */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem; /* Cải tiến: Font size lớn hơn */
+  margin-bottom: 5rem; /* Cải tiến: Khoảng cách lớn hơn */
+  font-weight: 700;
+  color: var(--primary-dark);
+  /* Cải tiến: Thêm shadow cho tiêu đề */
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  /* Gạch chân kiểu cổ điển 2 bên */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px; /* Cải tiến: Tăng letter-spacing */
+}
+.section-title::before, .section-title::after {
+  content: '';
+  height: 4px; /* Dày hơn */
+  width: 80px; /* Dài hơn */
+  /* Cải tiến: Thêm hiệu ứng chạm khắc cho gạch chân */
+  background: repeating-linear-gradient(-45deg, var(--accent-gold), var(--accent-gold) 4px, rgba(0,0,0,0.1) 4px, rgba(0,0,0,0.2) 8px);
+  margin: 0 30px; /* Khoảng cách rộng hơn */
+  display: inline-block;
+  opacity: 0.8; /* Rõ ràng hơn */
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Thêm shadow nhẹ */
+}
+.section-title span { position: relative; }
+
+
+/* --- Fun Facts Section (KHÔNG SỬA) --- */
+.fun-facts-section {
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  /* Cải tiến LỚN: Họa tiết quân sự chìm (huy hiệu/sao) được giữ nguyên, nhưng tăng opacity */
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c0a062' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); /* Tăng fill-opacity lên 0.15 */
+}
+.fun-facts-section .section-title {
+  color: var(--accent-gold);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5); /* Shadow đậm hơn cho nền tối */
+}
+.fun-facts-section a:hover { color: var(--accent-red); } /* Hover link trong khu vực tối */
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cải tiến: Tăng min-width */
+  gap: 3rem; /* Cải tiến: Tăng khoảng cách */
+}
+
+.fact-card {
+  background: rgba(0,0,0,0.4); /* Nền đậm hơn */
+  padding: 3rem 2.5rem; /* Cải tiến: Padding lớn hơn */
+  /* Viền vàng mỏng tinh tế */
+  border: 2px solid var(--accent-gold); /* Dày hơn */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* Shadow nhẹ ban đầu */
+}
+
+/* Cải tiến LỚN: Lớp phủ gradient (Military accent) */
+.fact-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  /* Cải tiến: Gradient mạnh hơn */
+  background: linear-gradient(to top right, transparent 60%, var(--primary-military) 200%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 1;
+}
+
+.fact-card:hover {
+  transform: translateY(-8px); /* Nâng lên nhiều hơn */
+  background: rgba(0,0,0,0.6); /* Nền hover đậm hơn */
+  box-shadow: 0 15px 35px rgba(0,0,0,1); /* Shadow hover cực mạnh */
+  border-color: #ffe47a; /* Viền sáng hơn */
+}
+.fact-card:hover::before { opacity: 0.5; } /* Hiện lớp phủ rõ hơn khi hover */
+
+.fact-icon {
+  /* Cải tiến: Thêm khung cho icon */
+  border: 4px double var(--accent-gold); /* Viền double dày hơn */
+  display: inline-block;
+  padding: 10px 25px;
+  margin-bottom: 1.5rem;
+  font-size: 3rem; /* Icon lớn hơn */
+  color: var(--accent-gold);
+  font-family: 'Playfair Display', serif;
+  /* Cải tiến: Shadow glow mạnh mẽ hơn */
+  box-shadow: 0 0 15px rgba(192, 160, 98, 0.8), inset 0 0 10px rgba(192, 160, 98, 0.5);
+  line-height: 1;
+  position: relative; z-index: 2;
+  background-color: rgba(0,0,0,0.2); /* Thêm nền nhẹ cho icon */
+}
+.fact-card h3, .fact-card p { position: relative; z-index: 2; }
+.fact-card h3 { color: var(--text-light); margin-bottom: 1rem; font-size: 1.6rem; } /* Font size lớn hơn */
+.fact-card p { opacity: 0.95; }
+
+
+/* --- Review Section (Cải tiến nền & Box) --- */
+.review-section {
+  /* Cải tiến: Sử dụng tông ấm hơn để phân biệt với Synopsis */
+  background-color: var(--bg-darker-parchment);
+  /* Cải tiến: Thêm họa tiết Linen chéo nhẹ cho nền */
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c0a062' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.review-box {
+  max-width: 900px; /* Cải tiến: Box rộng hơn */
+  margin: 0 auto;
+  background: var(--bg-cream);
+  padding: 5rem; /* Cải tiến: Padding lớn hơn */
+  /* Cải tiến LỚN: Viền triple/double dày hơn cho cảm giác cổ kính hơn */
+  border: double 15px var(--accent-gold); /* Viền double dày hơn */
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25); /* Cải tiến: Shadow đậm hơn */
+}
+.review-icon {
+  position: absolute;
+  /* Cải tiến: Thay đổi vị trí icon */
+  top: -55px;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  font-size: 7rem; /* Cải tiến: Font size lớn hơn */
+  /* Cải tiến: Màu chữ sẫm hơn, khớp với tông màu văn bản */
+  color: var(--primary-dark);
+  background: var(--bg-cream);
+  padding: 0 25px; /* Padding lớn hơn */
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+  font-style: normal;
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.2); /* Shadow rõ ràng hơn */
+}
+.review-content {
+  font-size: 1.4rem; /* Cải tiến: Font size lớn hơn */
+  font-style: italic;
+  color: #333; /* Màu chữ đậm hơn */
+  text-align: center;
+}
+.reviewer-meta {
+  margin-top: 3rem; /* Cải tiến: Khoảng cách lớn hơn */
+  text-align: center;
+  border-top: 2px solid var(--accent-gold); /* Cải tiến: Viền vàng dày hơn */
+  padding-top: 2rem;
+}
+.reviewer-name {
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-size: 1.3rem; /* Font size lớn hơn */
+  letter-spacing: 1px;
+}
+.reviewer-title { font-size: 1rem; color: var(--accent-red); font-style: italic; margin-top: 8px;}
+
+
+/* --- Footer (KHÔNG SỬA) --- */
+footer {
+  background-color: #111; /* Nền tối hơn */
+  /* Cải tiến: Gradient tối hơn và tương phản hơn */
+  background-image: linear-gradient(to bottom, #000, var(--primary-dark));
+  color: #ccc; /* Chữ sáng hơn */
+  text-align: center;
+  padding: 5rem 2rem; /* Padding lớn hơn */
+  border-top: 8px solid var(--accent-gold); /* Viền dày hơn */
+  text-shadow: 1px 1px 3px #000; /* Shadow rõ hơn cho chữ */
+}
+footer p.quote {
+  font-size: 1.5rem; /* Font size lớn hơn */
+  color: var(--text-light);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto 2.5rem; /* Khoảng cách lớn hơn */
+}
+footer a { color: #ffe47a; } /* Màu vàng sáng hơn cho link */
+
+
+/* --- Responsive --- */
+@media (max-width: 1050px) {
+  .synopsis-content { flex-direction: column; }
+  /* Cải tiến: Thêm padding để không bị dính vào cạnh */
+  .synopsis-content { padding: 2rem; }
+  .synopsis-content .meta-info { border-left: none; border-top: 4px solid var(--accent-red); margin-top: 2rem; } /* Viền top dày hơn */
+}
+
+@media (max-width: 900px) {
+  .hero { flex-direction: column; text-align: center; padding-top: 2rem; padding-bottom: 4rem;}
+  .hero-text { padding-right: 0; margin-bottom: 4rem; }
+  .hero-text h1 { font-size: 3.8rem; letter-spacing: 2px; } /* Giảm nhẹ font size và letter-spacing trên mobile */
+  .hero-text h2 { font-size: 1.8rem; }
+  .hero-image img { max-width: 95%; border-width: 10px;}
+  nav { display: none; }
+  .section-title { font-size: 2.5rem; flex-direction: column; }
+  .section-title::before, .section-title::after { display: none; }
+  .review-box { padding: 3rem 1.5rem; border-width: 10px; } /* Giảm padding và viền */
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Tolstoy <span>&</span> Thời đại</div>
+    <nav>
+      <ul>
+        <li><a href="#gioi-thieu">Tác phẩm</a></li>
+        <li><a href="#synopsis">Giới thiệu</a></li>
+        <li><a href="#tom-tat-co-dien">Cốt truyện</a></li>
+        <li><a href="#fun-facts">Góc khuất lịch sử</a></li>
+        <li><a href="#cam-nhan">Cảm nhận</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="gioi-thieu">
+    <div class="hero-text">
+      <h1>Chiến tranh<br>và Hòa bình</h1>
+      <h2>Bản hùng ca bi tráng của Lev Tolstoy</h2>
+      <p>
+        Một bức tranh toàn cảnh về nước Nga thế kỷ 19. Nơi tiếng đại bác trên chiến trường Borodino hòa lẫn với tiếng nhạc valse trong các phòng khánh tiết St. Petersburg. Một tượng đài văn học về số phận con người giữa dòng chảy lịch sử.
+      </p>
+      <a href="#synopsis" class="btn-antique">Đọc giới thiệu ngắn</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://static.tramdoc.vn/image/img.book/0/0/0/2165.jpg?v=1&w=400&h=260&nocache=1">
+    </div>
+  </section>
+
+  <section class="synopsis-section" id="synopsis">
+    <div class="synopsis-content">
+      <div class="main-text">
+        <p>
+          <strong>"Chiến tranh và Hòa bình"</strong> là một trong những tác phẩm vĩ đại nhất của lịch sử văn học. Nó không chỉ là một cuốn tiểu thuyết mà còn là một bộ sử thi khổng lồ, tái hiện lại thời kỳ Napoléon xâm lược Nga (1805–1812) và những hệ lụy của nó đối với xã hội quý tộc Nga.
+        </p>
+        <p style="margin-top: 1rem;">
+          Bằng sự quan sát sắc sảo, Tolstoy đã theo chân các gia đình quý tộc <strong style="color: var(--accent-red)">Bezukhov</strong>, <strong style="color: var(--accent-red)">Bolkonsky</strong>, và <strong style="color: var(--accent-red)">Rostov</strong> qua cả những trận chiến đẫm máu lẫn các buổi dạ vũ lộng lẫy. Tác phẩm đặt ra những câu hỏi triết học sâu sắc về chiến tranh, hòa bình, lịch sử và sự tự do ý chí.
+        </p>
+      </div>
+      <div class="meta-info">
+        <h3>Vài nét chính</h3>
+        <p>
+          <strong>Tác giả:</strong> Lev Nikolayevich Tolstoy<br>
+          <strong>Năm Xuất bản:</strong> 1869 (hoàn thành)<br>
+          <strong>Thời kỳ:</strong> Chiến tranh Napoléon (1805-1812)<br>
+          <strong>Chủ đề:</strong> Lịch sử, triết học, tình yêu, chiến tranh, số phận cá nhân.
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="divider-ornament"></div>
+
+<section id="tom-tat-co-dien" style="font-family: 'Times New Roman', serif;">
+  <h2 class="section-title" style="font-size: 2.2rem; color: #4e443e; border-bottom: 2px solid #a8947f; padding-bottom: 8px; margin-bottom: 20px; text-align: center; font-style: italic;">
+    <span style="font-weight: bold;">📜 Cốt truyện – "Chiến tranh và Hòa bình"</span>
+  </h2>
+
+  <div style="border: 1px solid #c2b2a6; padding: 30px; border-radius: 5px; background-color: #f7f4ed; /* Màu giấy cũ */ box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng chiều sâu */">
+    <div style="max-width: 900px; margin: 0 auto; font-size: 1.15rem; line-height: 1.8; text-align: justify; color: #3c3530;">
+     
+      <p style="margin-bottom: 1.8rem;">
+        Tác phẩm kinh điển này là một thiên anh hùng ca vĩ đại của Leo Tolstoy, bao quát giai đoạn <strong style="color: #6a5e55;">15 năm (1805–1820)</strong> lịch sử Nga. Câu chuyện lồng ghép cuộc đời của các nhân vật quý tộc, chủ yếu là các gia tộc <strong>Bezukhov, Bolkonsky, và Rostov</strong>, vào bối cảnh hỗn loạn của các cuộc <strong style="color: #8b0000; font-weight: normal; font-style: italic;">Chiến tranh Napoléon</strong>.
+      </p>
+
+      <h3 style="font-size: 1.5rem; color: #5c4b3f; margin-top: 2.5rem; margin-bottom: 1.2rem; border-left: 3px solid #b39b83; padding-left: 12px; font-weight: bold;">
+        Ba Linh hồn trên Hành trình Khám phá
+      </h3>
+
+      <ul style="list-style: square; margin-left: 30px; padding: 0;">
+        <li style="margin-bottom: 1.2rem;">
+          <strong style="color: #4e443e;">Pierre Bezukhov:</strong> Người thừa kế giàu có nhưng ngây thơ, đại diện cho quá trình <strong style="text-decoration: underline;">phát triển tinh thần và tìm kiếm chân lý</strong>, vượt qua sự xa hoa vật chất để đạt được lòng nhân ái.
+        </li>
+        <li style="margin-bottom: 1.2rem;">
+          <strong style="color: #4e443e;">Hoàng tử Andrei Bolkonsky:</strong> Một người lính cao thượng với khát vọng <strong style="color: #8b0000;">vinh quang quân sự</strong>. Anh trải qua sự vỡ mộng cay đắng và đấu tranh nội tâm để chấp nhận ý nghĩa thực sự của cuộc sống và cái chết.
+        </li>
+        <li style="margin-bottom: 1.2rem;">
+          <strong style="color: #4e443e;">Natasha Rostova:</strong> Cô gái trẻ rực rỡ, là hiện thân của <strong style="font-style: italic;">vẻ đẹp tự nhiên và niềm vui sống</strong>. Cuộc đời cô là sự đối lập hoàn hảo với sự tàn khốc của chiến tranh.
+        </li>
+      </ul>
+
+      <p style="margin-top: 2rem; border-top: 1px dashed #c2b2a6; padding-top: 1.5rem;">
+        Tolstoy xen kẽ nhuần nhuyễn giữa sự khốc liệt của các <strong style="color: #8b0000;">trận đánh (Austerlitz, Borodino)</strong> và sự lộng lẫy của xã hội St. Petersburg/Moscow. Tác phẩm là một bức tranh xã hội rộng lớn và đồng thời là một <strong>luận văn triết học</strong> sâu sắc về vai trò của cá nhân trong dòng chảy của Lịch sử.
+      </p>
+    </div>
+  </div>
+</section>
+  <div class="divider-ornament"></div>
+
+  <section class="fun-facts-section" id="fun-facts">
+    <h2 class="section-title"><span>Những trang sử bên lề</span></h2>
+    <div class="container">
+      <div class="facts-grid">
+        <div class="fact-card">
+          <div class="fact-icon">I</div>
+          <h3>Định nghĩa lại thể loại</h3>
+          <p>Tolstoy khẳng định đây không phải là tiểu thuyết. Nó là sự kết hợp chưa từng có giữa <strong>sử thi, biên niên sử gia đình</strong> và <strong>luận văn triết học</strong>.</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">VII</div>
+          <h3>Sự hy sinh thầm lặng</h3>
+          <p>Bà Sophia Tolstaya đã chép tay lại bản thảo khổng lồ này <strong style="color: var(--accent-gold)">7 lần</strong>. Chữ viết của Tolstoy nổi tiếng là "khó đọc như chữ bác sĩ".</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">DLXXX</div>
+          <h3>Hệ thống nhân vật đồ sộ</h3>
+          <p>Khoảng <strong style="color: var(--accent-gold)">580 nhân vật</strong> xuất hiện trong tác phẩm. Rất nhiều trong số đó là những nhân vật lịch sử có thật như Napoléon và Kutuzov.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-ornament"></div>
+
+  <section class="review-section" id="cam-nhan">
+    <h2 class="section-title"><span>Cảm nhận cá nhân</span></h2>
+    <div class="review-box">
+      <div class="review-content">
+        <p>
+          "Chiến tranh và Hòa bình" là kiệt tác vĩ đại, nơi Tolstoy lột tả sự vô nghĩa, hỗn loạn của chiến tranh và đối lập nó với giá trị vĩnh cửu của cuộc sống thực, tình yêu, và gia đình. Tác phẩm là hành trình tâm hồn phức tạp, cuối cùng khẳng định: ý nghĩa cuộc đời không nằm ở vinh quang lịch sử mà ở sự giản dị và lòng nhân ái.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="quote">"Nếu ai đó nói với tôi rằng tôi có thể viết một cuốn sách mà 20 năm nữa người ta vẫn đọc, tôi sẽ dành cả đời để viết nó."</p>
+    <p style="opacity: 0.6; font-size: 0.9rem;">&copy; 2023 Di sản văn học kinh điển. Thiết kế tri ân Lev Tolstoy.</p>
+  </footer>
+
+</body>
+</html>
